@@ -56,3 +56,11 @@ refer.py脚本中实现了网络测试过程。网络测试时调用CPM类的pre
 * gpu_id: 运行预测过程所用的gpu设备。   
 
 网络预测结束后，会将预测结果保存到path_to_save_file对应路径的二进制文件。
+### 3.3 预测结果保存
+save.py脚本实现了将预测结果保存到test.csv文件的过程。通过调用utils.py脚本中write_to_excel方法完成，参数如下：
+* folder_holds_results: 存放各种类别衣服的预测结果二进制文件的文件夹绝对路径。该路径下应包含'skirt.result', 'trousers.result', 'dress.result', 'blouse.result', 'outwear.result' 5种类别衣服的预测结果文件。
+* path_to_train_excel_file: 用于训练的train.xlsx文件绝对路径。保存到test.csv时要保证每个字段与该文件相同。
+* path_to_orig_test_excel_file: 用于预测的test.xlsx文件绝对路径。需要拷贝所有预测图像的id和category.
+* save_path: 保存到最终预测结果test.csv文件的绝对路径。  
+
+方法调用结束后，会在save_path指定路径生成test.csv预测文件，作为最终预测结果。
