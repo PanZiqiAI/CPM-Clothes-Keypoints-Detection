@@ -212,8 +212,7 @@ class CPM(nn.Block):
         # (1) trainer and loss function for total training mode
         model_trainer = trainer.Trainer(self.collect_params(), 'sgd',
                                         {'learning_rate': init_lr, 'momentum': 0.9, 'wd': 5e-4})
-        #loss_function = loss.SoftmaxCrossEntropyLoss(sparse_label=False)
-        loss_function = loss.SigmoidBinaryCrossEntropyLoss()
+        loss_function = loss.SoftmaxCrossEntropyLoss(sparse_label=False)
         # (2) train each epoch and batch
         for e in range(epoch_index, epochs):
             if e != epoch_index: batch_index = 0
