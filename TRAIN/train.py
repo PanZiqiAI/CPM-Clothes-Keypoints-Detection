@@ -28,7 +28,7 @@ train_data = utils.dataLoader(category=category,
 
 # 3.train
 cpm = cpm.CPM(network_name='CPM_' + category,
-              stage_count=stage,
+              stage_count=4,
               norm_image_size=norm_image_size, belief_map_size=belief_map_size,
               keypoints_count=keypoints_count)
 cpm.train(train_data=train_data,
