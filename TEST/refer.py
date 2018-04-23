@@ -23,7 +23,7 @@ test_data = utils.dataLoader(category=category,
                              belief_map_size=belief_map_size)
 
 # 3.refer
-cpm = cpm.CPM(network_name='CPM_' + category, stage_count=stage,
+cpm = cpm.CPM(network_name='CPM_' + category, stage_count=4,
               norm_image_size=norm_image_size, belief_map_size=belief_map_size, keypoints_count=keypoints_count)
 cpm.predict(test_data=test_data,
             log_folder='/home/panziqi/project/fashion_ai/version_softmax/log/test/epoch30_aug/',
