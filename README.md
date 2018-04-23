@@ -28,5 +28,16 @@ utils.py脚本中的dataLoader类用于加载原始图像数据并做预处理�
 * belief_map_size: 网络预测的热度图大小。本网络模型使用(46, 46)
 * keypoints_count: 关键点个数。  
 #### 2.2.2 网络训练过程
+网络训练时调用CPM类实例对象的train方法。该方法的参数许下：
+* train_data: 训练数据，其是utils.py脚本中的dataLoader类实例对象。
+* log_folder: 存放训练日志的文件夹绝对路径。
+* params_folder: 存放网络训练参数的文件夹绝对路径。
+* epochs: 训练轮数。
+* batch_size: 批次大小。
+* ctx: 训练设备，其是list类实例对象，多个训练设备（如GPU）的集合。
+* init_lr: 初始化学习率。本模型使用0.015.
+* lr_step: 学习率变化所经过的训练轮数。本模型使用3.
+* lr_factor: 每次学习率衰减时变化为原来的倍数。本模型使用0.7.   
 
+网络训练结束后，会在params_folder中生成对应的网络参数训练文件。
 ## 3测试步骤说明
